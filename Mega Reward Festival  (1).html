@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>GEN-Z TRADER'S MEGA REWARD FESTIVAL!</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* --- RESET & BASE with FADE ANIMATION --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(145deg, #f9f0ff 0%, #e8f0fe 100%);
+            background-attachment: fixed;
+            animation: bgFade 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgFade {
+            0% {
+                background: linear-gradient(145deg, #f9f0ff 0%, #e8f0fe 100%);
+            }
+            25% {
+                background: linear-gradient(145deg, #fef9e7 0%, #fdebd0 100%);
+            }
+            50% {
+                background: linear-gradient(145deg, #e8f8f5 0%, #d5f5e3 100%);
+            }
+            75% {
+                background: linear-gradient(145deg, #fdedec 0%, #fadbd8 100%);
+            }
+            100% {
+                background: linear-gradient(145deg, #f4ecf7 0%, #e8daef 100%);
+            }
+        }
+
+        /* --- MAIN CARD — 3D GLASS EFFECT --- */
+        .festival-card {
+            max-width: 540px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.30);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-radius: 56px;
+            padding: 32px 26px 36px;
+            box-shadow:
+                0 30px 80px rgba(45, 27, 78, 0.15),
+                0 10px 30px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            position: relative;
+            overflow: hidden;
+            transform: perspective(1200px) rotateX(2deg) rotateY(0deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .festival-card:hover {
+            transform: perspective(1200px) rotateX(0deg) rotateY(0deg);
+            box-shadow:
+                0 40px 100px rgba(45, 27, 78, 0.20),
+                0 15px 40px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .festival-card::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .festival-card::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(200, 130, 255, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- HEADER --- */
+        .brand-header {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 14px;
+        }
+
+        .brand-header .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 24px rgba(245, 166, 35, 0.30);
+        }
+
+        .brand-header h1 {
+            font-size: 30px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #2d1b4e, #6a3f8c, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 20px rgba(45, 27, 78, 0.06);
+        }
+
+        .brand-header .sub {
+            color: #6b5b7b;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .brand-header .sub i {
+            color: #f5a623;
+            margin-right: 6px;
+        }
+
+        /* --- TICKER --- */
+        .ticker-wrap {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(8px);
+            border-radius: 60px;
+            padding: 10px 0;
+            margin: 16px 0 20px;
+            border: 1px solid rgba(255, 215, 0, 0.12);
+            overflow: hidden;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .ticker-inner {
+            display: flex;
+            gap: 36px;
+            white-space: nowrap;
+            animation: tickerScroll 22s linear infinite;
+            width: max-content;
+            padding: 0 28px;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #7a6a8a;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Poppins', monospace;
+            letter-spacing: 0.3px;
+        }
+
+        .ticker-item i {
+            color: #f5a623;
+            font-size: 13px;
+        }
+
+        .ticker-item .highlight {
+            color: #2d1b4e;
+            font-weight: 800;
+        }
+
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* --- HERO --- */
+        .hero-section {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px 12px 14px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 36px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-section .emoji-burst {
+            font-size: 62px;
+            display: block;
+            animation: popBurst 1.8s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 24px rgba(245, 166, 35, 0.15));
+        }
+
+        @keyframes popBurst {
+            0% {
+                transform: scale(1) rotate(-2deg);
+            }
+            100% {
+                transform: scale(1.10) rotate(2deg);
+            }
+        }
+
+        .hero-section .tagline {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d1b4e;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-section .sub-tagline {
+            font-size: 15px;
+            color: #7a6a8a;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        /* --- SCAN WARNING --- */
+        .scan-warning {
+            background: rgba(231, 76, 60, 0.05);
+            border-left: 5px solid #e74c3c;
+            border-radius: 14px;
+            padding: 12px 16px;
+            margin: 12px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14px;
+            color: #c0392b;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(231, 76, 60, 0.12);
+        }
+
+        .scan-warning i {
+            font-size: 22px;
+            color: #e74c3c;
+        }
+
+        /* --- CTA BUTTON --- */
+        .cta-btn {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            padding: 20px 28px;
+            margin: 18px 0 8px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #f7c948, #f5a623, #e8921a);
+            color: #2d1b4e;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: 0 8px 36px rgba(245, 166, 35, 0.35);
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cta-btn i {
+            font-size: 22px;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 20px rgba(245, 166, 35, 0.20);
+        }
+
+        /* --- HOME BUTTON (REMOVED — we are removing it) --- */
+        /* No .home-btn style needed */
+
+        /* --- POPUP --- */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 27, 78, 0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 24px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.92) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .popup-box {
+            max-width: 440px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(24px);
+            border-radius: 44px;
+            padding: 38px 30px 32px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 30px 80px rgba(45, 27, 78, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popup-box::before {
+            content: '🎉';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 90px;
+            opacity: 0.04;
+            transform: rotate(12deg);
+        }
+
+        .popup-box .popup-icon {
+            font-size: 64px;
+            display: block;
+            margin-bottom: 6px;
+            animation: popBurst 1.4s ease-in-out infinite alternate;
+        }
+
+        .popup-box h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2d1b4e;
+            margin-bottom: 4px;
+        }
+
+        .popup-box h2 span {
+            color: #f5a623;
+        }
+
+        .popup-box p {
+            color: #6b5b7b;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .popup-box .highlight-text {
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f7c948, #e8921a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .popup-box .btn-group {
+            display: flex;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .popup-box .btn-group .popup-btn {
+            flex: 1;
+            padding: 18px;
+            border: none;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .popup-box .btn-group .popup-btn.primary {
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            box-shadow: 0 6px 28px rgba(245, 166, 35, 0.25);
+        }
+
+        .popup-box .btn-group .popup-btn.primary:active {
+            transform: scale(0.94);
+        }
+
+        .popup-box .btn-group .popup-btn.secondary {
+            background: rgba(45, 27, 78, 0.06);
+            color: #4a3a5a;
+            border: 1px solid rgba(45, 27, 78, 0.08);
+        }
+
+        .popup-box .btn-group .popup-btn.secondary:active {
+            transform: scale(0.94);
+            background: rgba(45, 27, 78, 0.10);
+        }
+
+        /* --- FORM --- */
+        .form-section {
+            position: relative;
+            z-index: 1;
+            display: none;
+            margin-top: 8px;
+            animation: slideUp 0.5s ease;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-section .form-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2d1b4e;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+        .form-section .form-title span {
+            color: #f5a623;
+        }
+
+        .form-section .form-sub {
+            font-size: 15px;
+            color: #7a6a8a;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: #3d2d4d;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group label i {
+            margin-right: 10px;
+            color: #f5a623;
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 20px;
+            border: 1.5px solid rgba(45, 27, 78, 0.06);
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(4px);
+            color: #1d0d2d;
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.25s ease;
+            outline: none;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #a090b0;
+            font-weight: 400;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f5a623;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 0 6px rgba(245, 166, 35, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 88px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12'%3E%3Cpath d='M1 1l7 7 7-7' stroke='%236a3f8c' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 52px;
+            color: #1d0d2d;
+        }
+
+        .form-group select option {
+            background: #ffffff;
+            color: #1d0d2d;
+        }
+
+        /* --- UPI with validation --- */
+        .upi-wrapper {
+            position: relative;
+        }
+
+        .upi-wrapper input {
+            padding-right: 56px;
+        }
+
+        .upi-validation-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+
+        .upi-validation-icon.valid {
+            color: #2ecc71;
+        }
+
+        .upi-validation-icon.invalid {
+            color: #e74c3c;
+        }
+
+        .upi-validation-icon.hidden {
+            opacity: 0;
+        }
+
+        .upi-error-msg {
+            font-size: 13px;
+            color: #e74c3c;
+            margin-top: 6px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .upi-error-msg.show {
+            display: block;
+        }
+
+        /* --- STAR RATING with emoji --- */
+        .star-rating-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 8px 0;
+            flex-wrap: wrap;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .star-rating .star {
+            font-size: 42px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            line-height: 1;
+            color: rgba(45, 27, 78, 0.10);
+        }
+
+        .star-rating .star:hover {
+            transform: scale(1.15);
+        }
+
+        .star-rating .star.active {
+            color: #f7c948;
+            text-shadow: 0 0 30px rgba(247, 201, 72, 0.25);
+        }
+
+        .star-rating .star.active.rating-1 {
+            color: #e74c3c;
+            text-shadow: 0 0 30px rgba(231, 76, 60, 0.20);
+        }
+        .star-rating .star.active.rating-2 {
+            color: #e67e22;
+            text-shadow: 0 0 30px rgba(230, 126, 34, 0.20);
+        }
+        .star-rating .star.active.rating-3 {
+            color: #f1c40f;
+            text-shadow: 0 0 30px rgba(241, 196, 15, 0.20);
+        }
+        .star-rating .star.active.rating-4 {
+            color: #2ecc71;
+            text-shadow: 0 0 30px rgba(46, 204, 113, 0.20);
+        }
+        .star-rating .star.active.rating-5 {
+            color: #f7c948;
+            text-shadow: 0 0 30px rgba(247, 201, 72, 0.25);
+        }
+
+        .rating-emoji {
+            font-size: 42px;
+            min-width: 56px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: popBurst 2s ease-in-out infinite alternate;
+        }
+
+        /* --- FILE UPLOAD --- */
+        .file-upload-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .file-upload-wrap .file-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: 20px;
+            border: 1.5px dashed rgba(245, 166, 35, 0.20);
+            background: rgba(255, 255, 255, 0.30);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #7a6a8a;
+            font-size: 15px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .file-upload-wrap .file-label i {
+            font-size: 22px;
+            color: #f5a623;
+        }
+
+        .file-upload-wrap .file-label:hover {
+            border-color: #f5a623;
+            background: rgba(255, 255, 255, 0.50);
+        }
+
+        .file-upload-wrap input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-wrap .file-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .file-upload-wrap .file-preview .preview-item {
+            position: relative;
+            width: 78px;
+            height: 78px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1.5px solid rgba(45, 27, 78, 0.06);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .file-upload-wrap .file-preview .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .file-upload-wrap .file-preview .preview-item .remove-file {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: rgba(45, 27, 78, 0.6);
+            backdrop-filter: blur(4px);
+            border: none;
+            color: #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .file-upload-wrap .file-preview .preview-item .remove-file:hover {
+            background: rgba(200, 50, 50, 0.8);
+        }
+
+        /* --- REWARD NOTIFICATION BOX --- */
+        .reward-notify-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(245, 166, 35, 0.03));
+            border: 2px solid rgba(245, 166, 35, 0.15);
+            border-radius: 22px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+        }
+
+        .reward-notify-box::before {
+            content: '🎁';
+            position: absolute;
+            top: -10px;
+            right: -6px;
+            font-size: 72px;
+            opacity: 0.03;
+            transform: rotate(8deg);
+        }
+
+        .reward-notify-box .notify-icon {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+
+        .reward-notify-box .notify-icon i {
+            font-size: 28px;
+            color: #f5a623;
+            animation: popBurst 2s ease-in-out infinite alternate;
+        }
+
+        .reward-notify-box .notify-icon span {
+            font-size: 19px;
+            font-weight: 800;
+            color: #2d1b4e;
+            letter-spacing: 0.3px;
+        }
+
+        .reward-notify-box .notify-desc {
+            font-size: 17px;
+            color: #4a3a5a;
+            line-height: 1.5;
+            padding-left: 4px;
+            font-weight: 500;
+        }
+
+        .reward-notify-box .notify-desc strong {
+            color: #f5a623;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .reward-notify-box .notify-desc .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            font-weight: 800;
+            padding: 2px 18px;
+            border-radius: 40px;
+            font-size: 18px;
+            margin: 0 3px;
+        }
+
+        .reward-notify-box .notify-note {
+            font-size: 14px;
+            color: #8a7a9a;
+            margin-top: 8px;
+            padding-left: 4px;
+            font-weight: 400;
+        }
+
+        .reward-notify-box .notify-note i {
+            color: #f5a623;
+            margin-right: 6px;
+        }
+
+        /* --- RETURN POLICY — HIGHLIGHTED (Hindi + English) --- */
+        .return-policy-box {
+            background: rgba(231, 76, 60, 0.03);
+            border: 2.5px solid rgba(231, 76, 60, 0.18);
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 0 1px rgba(231, 76, 60, 0.04) inset;
+        }
+
+        .return-policy-box::before {
+            content: '⛔';
+            position: absolute;
+            top: -14px;
+            right: -8px;
+            font-size: 72px;
+            opacity: 0.04;
+            transform: rotate(10deg);
+        }
+
+        .return-policy-box .policy-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #c0392b;
+            font-weight: 800;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .return-policy-box .policy-title i {
+            font-size: 22px;
+        }
+
+        .return-policy-box .policy-desc {
+            color: #4a3a5a;
+            font-size: 15px;
+            line-height: 1.6;
+            padding-left: 38px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .return-policy-box .policy-desc strong {
+            color: #c0392b;
+            font-weight: 800;
+        }
+
+        .return-policy-box .policy-desc-hi {
+            color: #5a4a6a;
+            font-size: 14px;
+            line-height: 1.6;
+            padding-left: 38px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            border-left: 3px solid rgba(231, 76, 60, 0.15);
+            padding-left: 16px;
+            margin-left: 22px;
+        }
+
+        .return-policy-box .policy-desc-hi strong {
+            color: #c0392b;
+            font-weight: 800;
+        }
+
+        .terms-check-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-left: 38px;
+            margin-top: 4px;
+        }
+
+        .terms-check-wrap input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            accent-color: #f5a623;
+            cursor: pointer;
+            flex-shrink: 0;
+            border-radius: 6px;
+        }
+
+        .terms-check-wrap label {
+            font-size: 14px;
+            color: #4a3a5a;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .terms-check-wrap label span {
+            color: #f5a623;
+            font-weight: 700;
+        }
+
+        /* --- SUBMIT --- */
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 36px rgba(245, 166, 35, 0.25);
+            transition: all 0.2s ease;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 20px rgba(245, 166, 35, 0.15);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            transform: scale(0.98);
+            pointer-events: none;
+        }
+
+        /* --- SUCCESS SCREEN --- */
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 18px 4px 8px;
+            animation: slideUp 0.6s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .success-screen.active {
+            display: block;
+        }
+
+        .success-screen .big-icon {
+            font-size: 78px;
+            display: block;
+            animation: popBurst 1.6s ease-in-out infinite alternate;
+        }
+
+        .success-screen h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2d1b4e;
+            margin-top: 4px;
+        }
+
+        .success-screen h2 span {
+            color: #f5a623;
+        }
+
+        .success-screen .notify-msg {
+            background: rgba(245, 166, 35, 0.06);
+            border: 1.5px solid rgba(245, 166, 35, 0.10);
+            border-radius: 18px;
+            padding: 14px 18px;
+            margin: 14px 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .success-screen .notify-msg i {
+            font-size: 24px;
+            color: #f5a623;
+        }
+
+        .success-screen .notify-msg span {
+            font-size: 17px;
+            font-weight: 600;
+            color: #2d1b4e;
+        }
+
+        .success-screen .notify-msg .date-highlight {
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            padding: 2px 18px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .success-screen .reward-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(245, 166, 35, 0.03));
+            border: 1.5px solid rgba(245, 166, 35, 0.12);
+            border-radius: 26px;
+            padding: 22px 18px;
+            margin: 16px 0;
+            display: none;
+        }
+
+        .success-screen .reward-box.visible {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        .success-screen .reward-box .amount {
+            font-size: 44px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f7c948, #e8921a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .success-screen .reward-box .label {
+            font-size: 15px;
+            color: #6b5b7b;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        .success-screen .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 14px 0 8px;
+        }
+
+        .success-screen .countdown-timer .time-unit {
+            text-align: center;
+        }
+
+        .success-screen .countdown-timer .time-unit .num {
+            font-size: 38px;
+            font-weight: 800;
+            color: #2d1b4e;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+            padding: 4px 16px;
+            border-radius: 16px;
+            min-width: 60px;
+            display: inline-block;
+            border: 1px solid rgba(45, 27, 78, 0.04);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .success-screen .countdown-timer .time-unit .lbl {
+            font-size: 12px;
+            color: #8a7a9a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .success-screen .note {
+            font-size: 14px;
+            color: #7a6a8a;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .success-screen .note i {
+            color: #f5a623;
+            margin-right: 6px;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: #8a7a9a;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 12px 0 4px;
+            margin-top: 8px;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .back-btn:hover {
+            color: #4a3a5a;
+        }
+
+        /* --- HAPPY SUBMISSION POPUP --- */
+        .thankyou-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 27, 78, 0.30);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 24px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .thankyou-overlay.active {
+            display: flex;
+        }
+
+        .thankyou-box {
+            max-width: 460px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(24px);
+            border-radius: 44px;
+            padding: 40px 30px 34px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 30px 80px rgba(45, 27, 78, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation: slideUp 0.5s ease;
+        }
+
+        .thankyou-box .thank-icon {
+            font-size: 70px;
+            display: block;
+            animation: popBurst 1.6s ease-in-out infinite alternate;
+        }
+
+        .thankyou-box h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2d1b4e;
+            margin: 4px 0 2px;
+        }
+
+        .thankyou-box h2 span {
+            color: #f5a623;
+        }
+
+        .thankyou-box .sub-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d1b4e;
+            margin: 2px 0 8px;
+        }
+
+        .thankyou-box .sub-text i {
+            color: #2ecc71;
+            margin-right: 8px;
+        }
+
+        .thankyou-box p {
+            font-size: 16px;
+            color: #6b5b7b;
+            line-height: 1.5;
+            margin: 6px 0 14px;
+        }
+
+        .thankyou-box .notify-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(245, 166, 35, 0.03));
+            border: 1.5px solid rgba(245, 166, 35, 0.10);
+            border-radius: 22px;
+            padding: 18px 20px;
+            margin: 12px 0 20px;
+        }
+
+        .thankyou-box .notify-card .label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #4a3a5a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .thankyou-box .notify-card .label i {
+            color: #f5a623;
+            font-size: 20px;
+        }
+
+        .thankyou-box .notify-card .date-display {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f7c948, #e8921a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 4px 0;
+        }
+
+        .thankyou-box .notify-card .sub-text {
+            font-size: 14px;
+            color: #7a6a8a;
+            font-weight: 500;
+            -webkit-text-fill-color: #7a6a8a;
+        }
+
+        .thankyou-box .notify-card .sub-text i {
+            color: #f5a623;
+        }
+
+        .thankyou-box .btn-continue {
+            padding: 18px 44px;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #f7c948, #f5a623);
+            color: #2d1b4e;
+            font-size: 19px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(245, 166, 35, 0.20);
+            transition: all 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 4px;
+        }
+
+        .thankyou-box .btn-continue:active {
+            transform: scale(0.95);
+        }
+
+        /* --- CONFETTI --- */
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-20px) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg) scale(0.2);
+                opacity: 0;
+            }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 480px) {
+            .festival-card {
+                padding: 22px 16px 26px;
+                border-radius: 36px;
+            }
+            .brand-header h1 {
+                font-size: 24px;
+            }
+            .hero-section .emoji-burst {
+                font-size: 48px;
+            }
+            .hero-section .tagline {
+                font-size: 18px;
+            }
+            .popup-box {
+                padding: 28px 20px 26px;
+            }
+            .popup-box .popup-icon {
+                font-size: 50px;
+            }
+            .popup-box h2 {
+                font-size: 20px;
+            }
+            .popup-box .highlight-text {
+                font-size: 28px;
+            }
+            .star-rating .star {
+                font-size: 34px;
+            }
+            .star-rating-wrapper {
+                gap: 12px;
+            }
+            .rating-emoji {
+                font-size: 34px;
+                min-width: 44px;
+            }
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px;
+                padding: 14px 16px;
+            }
+            .cta-btn {
+                font-size: 18px;
+                padding: 18px 20px;
+            }
+            .submit-btn {
+                font-size: 18px;
+                padding: 18px;
+            }
+            .reward-notify-box .notify-desc {
+                font-size: 15px;
+            }
+            .success-screen .countdown-timer .time-unit .num {
+                font-size: 28px;
+                min-width: 48px;
+                padding: 2px 12px;
+            }
+            .thankyou-box .notify-card .date-display {
+                font-size: 24px;
+            }
+            .thankyou-box h2 {
+                font-size: 24px;
+            }
+            .reward-notify-box .notify-icon span {
+                font-size: 17px;
+            }
+            .scan-warning {
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+            .scan-warning i {
+                font-size: 20px;
+            }
+            .return-policy-box .policy-title {
+                font-size: 15px;
+            }
+            .return-policy-box .policy-desc {
+                font-size: 14px;
+                padding-left: 0;
+            }
+            .return-policy-box .policy-desc-hi {
+                font-size: 13px;
+                padding-left: 12px;
+                margin-left: 8px;
+            }
+            .terms-check-wrap {
+                padding-left: 0;
+            }
+            .return-policy-box .policy-title i {
+                font-size: 19px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .brand-header h1 {
+                font-size: 20px;
+            }
+            .star-rating .star {
+                font-size: 28px;
+            }
+            .rating-emoji {
+                font-size: 28px;
+                min-width: 36px;
+            }
+            .popup-box .btn-group .popup-btn {
+                font-size: 15px;
+                padding: 14px;
+            }
+            .thankyou-box .btn-continue {
+                font-size: 17px;
+                padding: 14px 28px;
+            }
+            .reward-notify-box .notify-desc .date-badge {
+                font-size: 15px;
+                padding: 0 14px;
+            }
+            .reward-notify-box .notify-desc {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== MAIN CARD ===== -->
+    <div class="festival-card" id="app">
+
+        <!-- Header -->
+        <div class="brand-header">
+            <div class="badge"><i class="fas fa-crown"></i> &nbsp;MEGA FEST</div>
+            <h1>GEN-Z TRADER'S<br />MEGA REWARD FESTIVAL!</h1>
+            <div class="sub"><i class="fas fa-gift"></i> &nbsp;Win up to ₹100 on your Paytm</div>
+        </div>
+
+        <!-- Ticker -->
+        <div class="ticker-wrap">
+            <div class="ticker-inner" id="tickerInner"></div>
+        </div>
+
+        <!-- ===== HOME / LANDING ===== -->
+        <div class="hero-section" id="heroSection">
+            <span class="emoji-burst">🎁</span>
+            <div class="tagline">✨ Scan &amp; Win Big! ✨</div>
+            <div class="sub-tagline">Your feedback = up to ₹100 Paytm winning</div>
+
+            <!-- Feedback Summary Card -->
+            <div id="feedbackSummary" style="display:none; margin-top:18px; background:rgba(255,255,255,0.30); backdrop-filter:blur(8px); border-radius:24px; padding:20px; text-align:left; border:1px solid rgba(245,166,35,0.12); box-shadow:inset 0 1px 0 rgba(255,255,255,0.2);">
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+                    <i class="fas fa-check-circle" style="color:#2ecc71; font-size:22px;"></i>
+                    <span style="font-weight:800; color:#2d1b4e; font-size:17px;">Your Feedback</span>
+                </div>
+                <div style="font-size:15px; color:#4a3a5a; line-height:1.7;">
+                    <div><strong>Name:</strong> <span id="summaryName">-</span></div>
+                    <div><strong>Phone:</strong> <span id="summaryPhone">-</span></div>
+                    <div><strong>UPI:</strong> <span id="summaryUpi">-</span></div>
+                    <div><strong>Review:</strong> <span id="summaryReview">-</span></div>
+                    <div><strong>Rating:</strong> <span id="summaryRating">-</span> <span id="summaryEmoji"></span></div>
+                    <div><strong>Parcel Delivered / Received Date:</strong> <span id="summaryDate">-</span></div>
+                </div>
+                <div style="margin-top:12px; text-align:center; font-size:14px; color:#7a6a8a; border-top:1px solid rgba(0,0,0,0.04); padding-top:12px;">
+                    <i class="fas fa-bell" style="color:#f5a623;"></i> You'll be notified on <span id="summaryNotifyDate" style="font-weight:700; color:#2d1b4e;">-</span>
+                </div>
+            </div>
+
+            <!-- Go to Home button - REMOVED per request -->
+        </div>
+
+        <!-- ⚠️ MULTI-SCAN WARNING -->
+        <div class="scan-warning">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span><strong>⚠️ Scan QR code only once!</strong> Multiple scans will <strong>cancel</strong> your reward.</span>
+        </div>
+
+        <!-- CTA: Scan QR -->
+        <button class="cta-btn" id="scanBtn">
+            <i class="fas fa-qrcode"></i> Scan QR Code
+        </button>
+
+        <!-- ===== POPUP ===== -->
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-box">
+                <span class="popup-icon">🎯</span>
+                <h2>🎉 <span>Chance to Win</span></h2>
+                <p>Share your honest feedback &amp; get a chance to win</p>
+                <div class="highlight-text">₹100</div>
+                <p style="font-size:14px; margin-top:2px; color:#7a6a8a;">on your Paytm wallet!</p>
+                <div class="btn-group">
+                    <button class="popup-btn secondary" id="popupLater">Later</button>
+                    <button class="popup-btn primary" id="popupStart">Let's Go! 🚀</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FORM SECTION ===== -->
+        <div class="form-section" id="formSection">
+            <div class="form-title">📝 <span>Share Your Feedback</span></div>
+            <div class="form-sub">Fill in the details below to claim your reward</div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Full Name</label>
+                <input type="text" id="userName" placeholder="Enter your full name" />
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label><i class="fas fa-phone"></i> Phone Number</label>
+                <input type="tel" id="userPhone" placeholder="Enter 10-digit phone number" maxlength="10" />
+            </div>
+
+            <!-- UPI with validation -->
+            <div class="form-group">
+                <label><i class="fas fa-university"></i> UPI ID (Paytm/Google Pay/PhonePe)</label>
+                <div class="upi-wrapper">
+                    <input type="text" id="upiInput" placeholder="e.g. example@paytm" />
+                    <span class="upi-validation-icon hidden" id="upiIcon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <div class="upi-error-msg" id="upiError">❌ Invalid UPI ID. Must end with @paytm, @ybl, @okicici, @okhdfc, @axis, @icici, @hdfc, @sbi, @upi, etc.</div>
+            </div>
+
+            <!-- Product Review -->
+            <div class="form-group">
+                <label><i class="fas fa-comment"></i> Product Review</label>
+                <textarea id="productReview" placeholder="Write your product review..."></textarea>
+            </div>
+
+            <!-- Comments -->
+            <div class="form-group">
+                <label><i class="fas fa-pen"></i> Additional Comments</label>
+                <textarea id="userComments" placeholder="Any extra feedback..."></textarea>
+            </div>
+
+            <!-- Star Rating with Emoji -->
+            <div class="form-group">
+                <label><i class="fas fa-star"></i> Product Rating</label>
+                <div class="star-rating-wrapper">
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <span class="rating-emoji" id="ratingEmoji">😐</span>
+                </div>
+            </div>
+
+            <!-- Product Image -->
+            <div class="form-group">
+                <label><i class="fas fa-image"></i> Product Real Image</label>
+                <div class="file-upload-wrap">
+                    <label class="file-label" id="productImageLabel">
+                        <i class="fas fa-cloud-upload-alt"></i> Tap to upload product image
+                        <input type="file" id="productImage" accept="image/*" />
+                    </label>
+                    <div class="file-preview" id="productImagePreview"></div>
+                </div>
+            </div>
+
+            <!-- Meesho Screenshot -->
+            <div class="form-group">
+                <label><i class="fas fa-camera"></i> Screenshot of Meesho Rating &amp; Review</label>
+                <div class="file-upload-wrap">
+                    <label class="file-label" id="screenshotLabel">
+                        <i class="fas fa-cloud-upload-alt"></i> Tap to upload screenshot
+                        <input type="file" id="screenshotInput" accept="image/*" />
+                    </label>
+                    <div class="file-preview" id="screenshotPreview"></div>
+                </div>
+            </div>
+
+            <!-- Parcel Delivered / Received Date (renamed) -->
+            <div class="form-group">
+                <label><i class="fas fa-calendar-alt"></i> Parcel Delivered / Received Date</label>
+                <input type="date" id="purchaseDate" readonly style="background:rgba(255,255,255,0.30); cursor:default; opacity:0.85;" />
+            </div>
+
+            <!-- REWARD NOTIFICATION -->
+            <div class="reward-notify-box" id="rewardNotifyBox">
+                <div class="notify-icon">
+                    <i class="fas fa-bell"></i>
+                    <span>🎯 Reward Notification</span>
+                </div>
+                <div class="notify-desc">
+                    <strong>You will be notified on</strong>
+                    <span class="date-badge" id="notifyDateDisplay">8 May 2026</span>
+                </div>
+                <div class="notify-note">
+                    <i class="fas fa-clock"></i> No instant reward — you'll receive a notification on the date shown above.
+                </div>
+            </div>
+
+            <!-- RETURN POLICY — HIGHLIGHTED -->
+            <div class="return-policy-box">
+                <div class="policy-title">
+                    <i class="fas fa-times-circle"></i>
+                    <span>⛔ अगर प्रोडक्ट रिटर्न हुआ तो रिवॉर्ड नहीं! ⛔</span>
+                </div>
+                <div class="policy-desc">
+                    <strong>⚠️ IMPORTANT:</strong> If you <strong>Return or Cancel</strong> this product, you will <strong>NOT be eligible</strong> for the ₹100 reward. Please keep the product to claim your winning.
+                </div>
+                <div class="policy-desc-hi">
+                    <strong>⚠️ ध्यान दें:</strong> अगर आपने इस प्रोडक्ट को <strong>वापस (Return/Cancel)</strong> किया, तो आप ₹100 के रिवॉर्ड के <strong>पात्र नहीं होंगे</strong>। कृपया प्रोडक्ट रखें और रिवॉर्ड पाएँ।
+                </div>
+                <div class="terms-check-wrap">
+                    <input type="checkbox" id="termsCheck" />
+                    <label for="termsCheck">
+                        ✅ I confirm that I have <span>NOT returned</span> this product and agree to the terms. <br/>
+                        <span style="font-weight:400; color:#7a6a8a; font-size:12px;">मैं पुष्टि करता हूँ कि मैंने यह प्रोडक्ट <span style="color:#f5a623; font-weight:700;">रिटर्न नहीं</span> किया है और शर्तों से सहमत हूँ।</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button class="submit-btn" id="submitBtn">
+                <i class="fas fa-paper-plane"></i> Submit &amp; Claim Reward
+            </button>
+        </div>
+
+        <!-- ===== SUCCESS SCREEN ===== -->
+        <div class="success-screen" id="successScreen">
+            <span class="big-icon">📅</span>
+            <h2>You'll be <span>Notified!</span></h2>
+            <div class="notify-msg">
+                <i class="fas fa-bell"></i>
+                <span>You will be notified on</span>
+                <span class="date-highlight" id="successNotifyDate">8 May 2026</span>
+            </div>
+            <p style="color:#6b5b7b; font-size:15px; font-weight:500; margin:2px 0 4px;">
+                <i class="fas fa-clock" style="color:#f5a623;"></i> Reward status will be revealed in:
+            </p>
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="time-unit">
+                    <span class="num" id="cdDays">00</span>
+                    <span class="lbl">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span class="num" id="cdHours">00</span>
+                    <span class="lbl">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span class="num" id="cdMinutes">00</span>
+                    <span class="lbl">Mins</span>
+                </div>
+                <div class="time-unit">
+                    <span class="num" id="cdSeconds">00</span>
+                    <span class="lbl">Secs</span>
+                </div>
+            </div>
+            <div class="reward-box" id="rewardBox">
+                <div class="amount">₹100</div>
+                <div class="label">🎁 Paytm Winning</div>
+            </div>
+            <div class="note">
+                <i class="fas fa-check-circle"></i> You'll be notified on <span id="rewardDateDisplay">8 May 2026</span>
+            </div>
+            <button class="back-btn" id="resetBtn"><i class="fas fa-arrow-left"></i> Back to Home</button>
+        </div>
+
+    </div>
+
+    <!-- ===== HAPPY SUBMISSION POPUP ===== -->
+    <div class="thankyou-overlay" id="thankyouOverlay">
+        <div class="thankyou-box">
+            <span class="thank-icon">🎉</span>
+            <h2>Your Feedback <span>Submitted!</span></h2>
+            <div class="sub-text"><i class="fas fa-check-circle"></i> Successfully submitted!</div>
+            <p>Thank you for sharing your valuable feedback. 🥳</p>
+
+            <div class="notify-card">
+                <div class="label">
+                    <i class="fas fa-bell"></i> Reward Notification
+                </div>
+                <div class="date-display" id="thankyouDateDisplay">8 May 2026</div>
+                <div class="sub-text" style="-webkit-text-fill-color:#7a6a8a;">
+                    <i class="fas fa-clock"></i> You'll be notified on this date
+                </div>
+            </div>
+
+            <p style="font-size:15px; color:#7a6a8a; margin:4px 0 14px;">
+                🎁 Your ₹100 Paytm winning will be confirmed on the date shown above.
+            </p>
+
+            <button class="btn-continue" id="thankyouContinue">
+                <i class="fas fa-arrow-right"></i> Continue
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== CONFETTI ===== -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <script>
+        // ============================================================
+        //  CONFIG
+        // ============================================================
+        const FAKE_NUMBERS = [
+            '9876543210', '8765432109', '7654321098', '6543210987',
+            '5432109876', '4321098765', '3210987654', '2109876543',
+            '1098765432', '9988776655', '8877665544', '7766554433',
+            '6655443322', '5544332211', '4433221100', '3322110099',
+            '2211009988', '1100998877', '9900887766', '8800776655'
+        ];
+
+        const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const EMOJIS = ['😢', '😤', '😐', '😊', '😍'];
+
+        // Valid UPI handles (Indian banks & payment apps)
+        const VALID_UPI_HANDLES = [
+            'paytm', 'ybl', 'okicici', 'okhdfc', 'axis', 'icici', 'hdfc',
+            'sbi', 'upi', 'pnb', 'canara', 'union', 'indian', 'idfc',
+            'kotak', 'yesbank', 'au', 'federal', 'rbl', 'citi', 'dbs',
+            'hsbc', 'standardchartered', 'bob', 'baroda', 'iob', 'iob',
+            'uco', 'centralbank', 'bankofindia', 'syndicate', 'vijaya',
+            'dhanlaxmi', 'southindian', 'karnataka', 'karur', 'laxmivilas',
+            'tamilnad', 'cityunion', 'dcb', 'equitas', 'idbi', 'j&k',
+            'punjab', 'rajasthan', 'saraswat', 'shamrao', 'tjsb', 'kerala'
+        ];
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+        let selectedRating = 0;
+        let productImageFile = null;
+        let screenshotFile = null;
+        let countdownInterval = null;
+        let rewardDate = null;
+        let rewardReady = false;
+        let isSubmitted = false;
+
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+        const $ = (id) => document.getElementById(id);
+        const scanBtn = $('scanBtn');
+        const popupOverlay = $('popupOverlay');
+        const popupStart = $('popupStart');
+        const popupLater = $('popupLater');
+        const formSection = $('formSection');
+        const heroSection = $('heroSection');
+        const successScreen = $('successScreen');
+        const submitBtn = $('submitBtn');
+        const resetBtn = $('resetBtn');
+        const tickerInner = $('tickerInner');
+        const feedbackSummary = $('feedbackSummary');
+
+        const userName = $('userName');
+        const userPhone = $('userPhone');
+        const upiInput = $('upiInput');
+        const upiIcon = $('upiIcon');
+        const upiError = $('upiError');
+        const productReview = $('productReview');
+        const userComments = $('userComments');
+        const purchaseDate = $('purchaseDate');
+        const productImage = $('productImage');
+        const screenshotInput = $('screenshotInput');
+        const productImagePreview = $('productImagePreview');
+        const screenshotPreview = $('screenshotPreview');
+        const starRating = $('starRating');
+        const termsCheck = $('termsCheck');
+        const ratingEmoji = $('ratingEmoji');
+
+        const cdDays = $('cdDays');
+        const cdHours = $('cdHours');
+        const cdMinutes = $('cdMinutes');
+        const cdSeconds = $('cdSeconds');
+        const rewardDateDisplay = $('rewardDateDisplay');
+        const notifyDateDisplay = $('notifyDateDisplay');
+        const successNotifyDate = $('successNotifyDate');
+        const thankyouDateDisplay = $('thankyouDateDisplay');
+        const rewardBox = $('rewardBox');
+
+        const summaryName = $('summaryName');
+        const summaryPhone = $('summaryPhone');
+        const summaryUpi = $('summaryUpi');
+        const summaryReview = $('summaryReview');
+        const summaryRating = $('summaryRating');
+        const summaryEmoji = $('summaryEmoji');
+        const summaryDate = $('summaryDate');
+        const summaryNotifyDate = $('summaryNotifyDate');
+
+        const thankyouOverlay = $('thankyouOverlay');
+        const thankyouContinue = $('thankyouContinue');
+
+        // ============================================================
+        //  SOUND EFFECTS
+        // ============================================================
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function playTone(frequency, duration, type = 'sine', volume = 0.3) {
+            try {
+                initAudio();
+                const oscillator = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                oscillator.type = type;
+                oscillator.frequency.value = frequency;
+                gain.gain.value = volume;
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+                oscillator.connect(gain);
+                gain.connect(audioCtx.destination);
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + duration);
+            } catch (e) { /* silent fail */ }
+        }
+
+        function playChime() {
+            playTone(523, 0.15, 'sine', 0.2);
+            setTimeout(() => playTone(659, 0.15, 'sine', 0.2), 100);
+            setTimeout(() => playTone(784, 0.2, 'sine', 0.25), 200);
+        }
+
+        function playSuccess() {
+            playTone(523, 0.2, 'sine', 0.25);
+            setTimeout(() => playTone(659, 0.2, 'sine', 0.25), 150);
+            setTimeout(() => playTone(784, 0.3, 'sine', 0.3), 300);
+            setTimeout(() => playTone(1047, 0.4, 'sine', 0.3), 500);
+        }
+
+        function playRewardReady() {
+            playTone(523, 0.15, 'sine', 0.3);
+            setTimeout(() => playTone(659, 0.15, 'sine', 0.3), 120);
+            setTimeout(() => playTone(784, 0.15, 'sine', 0.3), 240);
+            setTimeout(() => playTone(1047, 0.4, 'sine', 0.35), 360);
+        }
+
+        // ============================================================
+        //  TICKER
+        // ============================================================
+        function buildTicker() {
+            const items = FAKE_NUMBERS.map(num => {
+                const masked = 'xxxxxxx' + num.slice(-3);
+                return `<span class="ticker-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span class="highlight">${masked}</span>
+                        </span>`;
+            });
+            tickerInner.innerHTML = items.join('') + items.join('');
+        }
+        buildTicker();
+
+        // ============================================================
+        //  STAR RATING with emoji (1⭐ = 😢)
+        // ============================================================
+        const stars = starRating.querySelectorAll('.star');
+
+        function updateRatingUI(rating) {
+            stars.forEach((star, index) => {
+                const val = index + 1;
+                star.classList.remove('active', 'rating-1', 'rating-2', 'rating-3', 'rating-4', 'rating-5');
+                if (val <= rating) {
+                    star.classList.add('active');
+                    if (rating === 1) star.classList.add('rating-1');
+                    else if (rating === 2) star.classList.add('rating-2');
+                    else if (rating === 3) star.classList.add('rating-3');
+                    else if (rating === 4) star.classList.add('rating-4');
+                    else if (rating === 5) star.classList.add('rating-5');
+                }
+            });
+
+            if (rating === 0) {
+                ratingEmoji.textContent = '😐';
+            } else {
+                ratingEmoji.textContent = EMOJIS[rating - 1] || '😐';
+            }
+        }
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const val = parseInt(this.dataset.value);
+                selectedRating = val;
+                updateRatingUI(val);
+            });
+            star.addEventListener('mouseenter', function() {
+                const val = parseInt(this.dataset.value);
+                stars.forEach((s, idx) => {
+                    if (idx < val) {
+                        s.style.color = '#f7c948';
+                    } else {
+                        s.style.color = 'rgba(45,27,78,0.10)';
+                    }
+                });
+                if (val > 0) {
+                    ratingEmoji.textContent = EMOJIS[val - 1] || '😐';
+                }
+            });
+            star.addEventListener('mouseleave', function() {
+                stars.forEach(s => {
+                    s.style.color = '';
+                });
+                if (selectedRating > 0) {
+                    ratingEmoji.textContent = EMOJIS[selectedRating - 1] || '😐';
+                } else {
+                    ratingEmoji.textContent = '😐';
+                }
+                updateRatingUI(selectedRating);
+            });
+        });
+
+        // ============================================================
+        //  FILE UPLOADS
+        // ============================================================
+        function handleFileUpload(input, previewContainer, fileRef) {
+            const file = input.files[0];
+            if (!file) return;
+            if (!file.type.startsWith('image/')) {
+                alert('Please upload an image file.');
+                input.value = '';
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewContainer.innerHTML = '';
+                const div = document.createElement('div');
+                div.className = 'preview-item';
+                div.innerHTML = `
+                            <img src="${e.target.result}" alt="preview" />
+                            <button class="remove-file" data-type="${input.id}">✕</button>
+                        `;
+                previewContainer.appendChild(div);
+                if (input.id === 'productImage') productImageFile = file;
+                else if (input.id === 'screenshotInput') screenshotFile = file;
+                div.querySelector('.remove-file').addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    previewContainer.innerHTML = '';
+                    input.value = '';
+                    if (input.id === 'productImage') productImageFile = null;
+                    else if (input.id === 'screenshotInput') screenshotFile = null;
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+
+        productImage.addEventListener('change', function() {
+            handleFileUpload(this, productImagePreview, 'productImage');
+        });
+        screenshotInput.addEventListener('change', function() {
+            handleFileUpload(this, screenshotPreview, 'screenshotInput');
+        });
+
+        // ============================================================
+        //  UPI VALIDATION — strict bank handle check
+        // ============================================================
+        function validateUPI(value) {
+            const trimmed = value.trim();
+            if (!trimmed) return false;
+            const parts = trimmed.split('@');
+            if (parts.length !== 2) return false;
+            const handle = parts[1].toLowerCase();
+            return VALID_UPI_HANDLES.includes(handle);
+        }
+
+        function updateUPIValidation() {
+            const val = upiInput.value;
+            if (val.trim() === '') {
+                upiIcon.className = 'upi-validation-icon hidden';
+                upiError.classList.remove('show');
+                return;
+            }
+            const valid = validateUPI(val);
+            if (valid) {
+                upiIcon.className = 'upi-validation-icon valid';
+                upiIcon.innerHTML = '<i class="fas fa-check-circle"></i>';
+                upiError.classList.remove('show');
+            } else {
+                upiIcon.className = 'upi-validation-icon invalid';
+                upiIcon.innerHTML = '<i class="fas fa-times-circle"></i>';
+                upiError.classList.add('show');
+            }
+        }
+
+        upiInput.addEventListener('input', updateUPIValidation);
+        upiInput.addEventListener('blur', updateUPIValidation);
+
+        // ============================================================
+        //  UPDATE NOTIFY DATE (only date, no extra text)
+        // ============================================================
+        function updateNotifyDate() {
+            const val = purchaseDate.value;
+            if (!val) {
+                const today = new Date();
+                const d = new Date(today);
+                d.setDate(d.getDate() + 7);
+                const display = `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+                notifyDateDisplay.textContent = display;
+                return;
+            }
+            const purchase = new Date(val + 'T00:00:00');
+            if (isNaN(purchase.getTime())) return;
+            const reward = new Date(purchase);
+            reward.setDate(reward.getDate() + 7);
+            const display = `${reward.getDate()} ${MONTHS[reward.getMonth()]} ${reward.getFullYear()}`;
+            notifyDateDisplay.textContent = display;
+        }
+
+        // ============================================================
+        //  SET AUTO DATE (readonly, non-editable)
+        // ============================================================
+        function setAutoDate() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            purchaseDate.value = `${year}-${month}-${day}`;
+            updateNotifyDate();
+        }
+        setAutoDate();
+
+        // ============================================================
+        //  POPUP
+        // ============================================================
+        scanBtn.addEventListener('click', () => {
+            if (isSubmitted) {
+                alert('⚠️ You have already submitted your feedback. Multiple scans will cancel your reward!');
+                return;
+            }
+            initAudio();
+            playChime();
+            popupOverlay.classList.add('active');
+            if (navigator.vibrate) navigator.vibrate(10);
+        });
+
+        popupLater.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+        });
+
+        popupStart.addEventListener('click', () => {
+            if (isSubmitted) {
+                alert('⚠️ You have already submitted your feedback. Please wait for your reward notification.');
+                popupOverlay.classList.remove('active');
+                return;
+            }
+            initAudio();
+            playChime();
+            popupOverlay.classList.remove('active');
+            heroSection.style.display = 'none';
+            scanBtn.style.display = 'none';
+            formSection.classList.add('active');
+            if (!purchaseDate.value) setAutoDate();
+            spawnConfetti(30);
+        });
+
+        // ============================================================
+        //  SUBMIT
+        // ============================================================
+        submitBtn.addEventListener('click', function() {
+            if (isSubmitted) {
+                alert('You have already submitted your feedback.');
+                return;
+            }
+
+            if (!userName.value.trim()) { alert('Please enter your name.'); return; }
+            if (!userPhone.value.trim() || userPhone.value.length < 10) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+            const upiVal = upiInput.value.trim();
+            if (!upiVal) { alert('Please enter your UPI ID.'); return; }
+            if (!validateUPI(upiVal)) {
+                alert('❌ Invalid UPI ID. Must end with @paytm, @ybl, @okicici, @okhdfc, @axis, @icici, @hdfc, @sbi, @upi, etc.');
+                upiInput.focus();
+                return;
+            }
+            if (!productReview.value.trim()) { alert('Please write a product review.'); return; }
+            if (selectedRating === 0) { alert('Please select a star rating.'); return; }
+            if (!productImageFile) { alert('Please upload a product image.'); return; }
+            if (!screenshotFile) { alert('Please upload a screenshot of your Meesho rating & review.'); return; }
+            if (!purchaseDate.value) { alert('Please select your parcel delivered date.'); return; }
+            if (!termsCheck.checked) {
+                alert('⚠️ कृपया पुष्टि करें कि आपने प्रोडक्ट रिटर्न नहीं किया है। Please confirm you have NOT returned the product.');
+                termsCheck.focus();
+                return;
+            }
+
+            // Calculate reward date
+            const purchase = new Date(purchaseDate.value + 'T00:00:00');
+            if (isNaN(purchase.getTime())) { alert('Invalid date.'); return; }
+            const reward = new Date(purchase);
+            reward.setDate(reward.getDate() + 7);
+            const displayDate = `${reward.getDate()} ${MONTHS[reward.getMonth()]} ${reward.getFullYear()}`;
+            rewardDate = reward;
+            rewardReady = false;
+            isSubmitted = true;
+
+            const feedbackData = {
+                name: userName.value.trim(),
+                phone: userPhone.value.trim(),
+                upi: upiVal,
+                review: productReview.value.trim(),
+                comments: userComments.value.trim(),
+                rating: selectedRating,
+                date: purchaseDate.value,
+                notifyDate: displayDate
+            };
+            localStorage.setItem('feedbackData', JSON.stringify(feedbackData));
+
+            initAudio();
+            playSuccess();
+
+            thankyouDateDisplay.textContent = displayDate;
+            thankyouOverlay.classList.add('active');
+            spawnConfetti(50);
+            setTimeout(() => spawnConfetti(40), 400);
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit & Claim Reward';
+            }, 1200);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================================
+        //  THANK YOU → CONTINUE → HOME with summary (no Go to Home button)
+        // ============================================================
+        thankyouContinue.addEventListener('click', function() {
+            initAudio();
+            playChime();
+            thankyouOverlay.classList.remove('active');
+
+            formSection.classList.remove('active');
+            heroSection.style.display = 'block';
+            scanBtn.style.display = 'none';
+            feedbackSummary.style.display = 'block';
+
+            const data = JSON.parse(localStorage.getItem('feedbackData'));
+            if (data) {
+                summaryName.textContent = data.name;
+                summaryPhone.textContent = data.phone;
+                summaryUpi.textContent = data.upi;
+                summaryReview.textContent = data.review;
+                summaryRating.textContent = data.rating + ' ★';
+                summaryEmoji.textContent = EMOJIS[data.rating - 1] || '😐';
+                summaryDate.textContent = data.date;
+                summaryNotifyDate.textContent = data.notifyDate;
+            }
+
+            const heroSub = document.querySelector('.hero-section .sub-tagline');
+            heroSub.textContent = '🎯 Your feedback is submitted! You\'ll be notified on ' + (data ? data.notifyDate : '');
+
+            const warning = document.querySelector('.scan-warning');
+            warning.innerHTML = `
+                        <i class="fas fa-check-circle" style="color:#2ecc71;"></i>
+                        <span style="color:#2d1b4e;"><strong>✅ Feedback submitted successfully!</strong> Multiple scans will cancel your reward.</span>
+                    `;
+
+            spawnConfetti(20);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================================
+        //  RESET (Back to Home from success)
+        // ============================================================
+        resetBtn.addEventListener('click', function() {
+            if (countdownInterval) clearInterval(countdownInterval);
+            successScreen.classList.remove('active');
+            formSection.classList.remove('active');
+            heroSection.style.display = 'block';
+            scanBtn.style.display = 'none';
+            feedbackSummary.style.display = 'block';
+
+            const data = JSON.parse(localStorage.getItem('feedbackData'));
+            if (data) {
+                summaryName.textContent = data.name;
+                summaryPhone.textContent = data.phone;
+                summaryUpi.textContent = data.upi;
+                summaryReview.textContent = data.review;
+                summaryRating.textContent = data.rating + ' ★';
+                summaryEmoji.textContent = EMOJIS[data.rating - 1] || '😐';
+                summaryDate.textContent = data.date;
+                summaryNotifyDate.textContent = data.notifyDate;
+                document.querySelector('.hero-section .sub-tagline').textContent =
+                    '🎯 Your feedback is submitted! You\'ll be notified on ' + data.notifyDate;
+            }
+
+            const warning = document.querySelector('.scan-warning');
+            warning.innerHTML = `
+                        <i class="fas fa-check-circle" style="color:#2ecc71;"></i>
+                        <span style="color:#2d1b4e;"><strong>✅ Feedback submitted successfully!</strong> Multiple scans will cancel your reward.</span>
+                    `;
+
+            // Reset form fields
+            userName.value = '';
+            userPhone.value = '';
+            upiInput.value = '';
+            upiIcon.className = 'upi-validation-icon hidden';
+            upiError.classList.remove('show');
+            productReview.value = '';
+            userComments.value = '';
+            selectedRating = 0;
+            stars.forEach(s => s.classList.remove('active', 'rating-1', 'rating-2', 'rating-3', 'rating-4', 'rating-5'));
+            ratingEmoji.textContent = '😐';
+            productImage.value = '';
+            screenshotInput.value = '';
+            productImagePreview.innerHTML = '';
+            screenshotPreview.innerHTML = '';
+            productImageFile = null;
+            screenshotFile = null;
+            setAutoDate();
+            termsCheck.checked = false;
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit & Claim Reward';
+
+            document.querySelector('.success-screen .big-icon').textContent = '📅';
+            document.querySelector('.success-screen h2').innerHTML = 'You\'ll be <span>Notified!</span>';
+            const notifyMsg = document.querySelector('.success-screen .notify-msg');
+            notifyMsg.innerHTML = `
+                        <i class="fas fa-bell"></i>
+                        <span>You will be notified on</span>
+                        <span class="date-highlight" id="successNotifyDate">8 May 2026</span>
+                    `;
+            rewardBox.classList.remove('visible');
+            rewardReady = false;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            spawnConfetti(20);
+        });
+
+        // ============================================================
+        //  CONFETTI
+        // ============================================================
+        function spawnConfetti(count = 40) {
+            const container = $('confettiContainer');
+            const colors = ['#f7c948', '#f5a623', '#ff6b6b', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff9f43', '#2ecc71',
+                '#e056a0'
+            ];
+            for (let i = 0; i < count; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                const size = 5 + Math.random() * 10;
+                piece.style.width = size + 'px';
+                piece.style.height = size * (0.6 + Math.random() * 0.8) + 'px';
+                piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.left = Math.random() * 100 + '%';
+                piece.style.top = '-10px';
+                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+                piece.style.animationDuration = 2 + Math.random() * 3.5 + 's';
+                piece.style.animationDelay = Math.random() * 1.5 + 's';
+                container.appendChild(piece);
+                setTimeout(() => piece.remove(), 5500);
+            }
+        }
+
+        // ============================================================
+        //  AUTO POPUP (only if not submitted)
+        // ============================================================
+        setTimeout(() => {
+            const data = localStorage.getItem('feedbackData');
+            if (data) {
+                isSubmitted = true;
+                const parsed = JSON.parse(data);
+                heroSection.style.display = 'block';
+                scanBtn.style.display = 'none';
+                feedbackSummary.style.display = 'block';
+                summaryName.textContent = parsed.name;
+                summaryPhone.textContent = parsed.phone;
+                summaryUpi.textContent = parsed.upi;
+                summaryReview.textContent = parsed.review;
+                summaryRating.textContent = parsed.rating + ' ★';
+                summaryEmoji.textContent = EMOJIS[parsed.rating - 1] || '😐';
+                summaryDate.textContent = parsed.date;
+                summaryNotifyDate.textContent = parsed.notifyDate;
+                document.querySelector('.hero-section .sub-tagline').textContent =
+                    '🎯 Your feedback is submitted! You\'ll be notified on ' + parsed.notifyDate;
+                const warning = document.querySelector('.scan-warning');
+                warning.innerHTML = `
+                            <i class="fas fa-check-circle" style="color:#2ecc71;"></i>
+                            <span style="color:#2d1b4e;"><strong>✅ Feedback submitted successfully!</strong> Multiple scans will cancel your reward.</span>
+                        `;
+                return;
+            }
+
+            if (!formSection.classList.contains('active') && !successScreen.classList.contains('active')) {
+                popupOverlay.classList.add('active');
+            }
+        }, 1200);
+
+        // ============================================================
+        //  PHONE INPUT
+        // ============================================================
+        userPhone.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '').slice(0, 10);
+        });
+
+        userPhone.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                upiInput.focus();
+            }
+        });
+
+        console.log('🎉 GEN-Z TRADER\'S MEGA REWARD FESTIVAL! 🎉');
+        console.log('💰 Up to ₹100 Paytm winning (notified after 7 days)');
+        console.log('⚠️ Multiple QR scans will cancel reward.');
+        console.log('⛔ Return policy: reward void if product returned.');
+        console.log('🔊 Sound effects enabled!');
+        console.log('⭐ Rating emojis: 😢😤😐😊😍');
+        console.log('🔑 UPI validation with bank handles enabled.');
+        console.log('📦 Parcel Delivered / Received Date is auto-set and read-only.');
+        console.log('🏠 "Go to Home" button removed as requested.');
+    </script>
+
+</body>
+</html>
